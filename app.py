@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 import random
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False
+
 
 writing_prompts = [
     {
@@ -2670,6 +2670,8 @@ writing_prompts = [
         "prompt": "666．如果有钱了，你会做什么？"
     }
 ]
+
+app.config['JSON_AS_ASCII'] = False
 
 # 用于存储已经返回的提示ID
 returned_ids = set()
