@@ -2,8 +2,8 @@ from flask import Flask, jsonify, request
 import random
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
-# 假设这是从文档中提取的写作提示列表
 writing_prompts = [
     {
         "id": 1,
