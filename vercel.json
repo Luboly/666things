@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "serverless.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python-3.12.2"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "serverless.py"
+    }
+  ]
+}
