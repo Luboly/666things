@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request， Response
 import random
 
 app = Flask(__name__)
@@ -2671,13 +2671,12 @@ writing_prompts = [
     }
 ]
 
-app.config['JSON_AS_ASCII'] = False
+
 
 # 用于存储已经返回的提示ID
 returned_ids = set()
 
-
-@app.route('/api/writing-prompts', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_writing_prompts():
     if len(writing_prompts) <= len(returned_ids):
         return jsonify({"status": "error", "message": "All prompts have been returned."}), 403
